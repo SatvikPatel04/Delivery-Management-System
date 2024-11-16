@@ -11,27 +11,25 @@ const UpdateDetails = () => {
     const [password, setPassword] = useState('');
     const [address, setAddress] = useState('');
     const [message, setMessage] = useState('');
-    const [error, setError] = useState(''); // Error state for password validation
+    const [error, setError] = useState(''); 
     const navigate = useNavigate();
 
     const handlePasswordChange = (e) => {
         const value = e.target.value;
         setPassword(value);
 
-        // Validate password
         if (value.length < 6) {
             setError('Password must be at least 6 characters long.');
         } else if (!/\d/.test(value)) {
             setError('Password must contain at least one number.');
         } else {
-            setError(''); // Clear error if validation passes
+            setError(''); 
         }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Block form submission if there is a validation error
         if (error) {
             setMessage('Please fix the errors before submitting the form.');
             return;

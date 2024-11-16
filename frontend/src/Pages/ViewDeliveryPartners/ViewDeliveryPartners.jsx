@@ -34,7 +34,7 @@ console.log(partners);
         <thead>
           <tr>
             <th>Sl No</th>
-            <th>Delivery Partner ID</th> {/* Add column for Delivery Partner ID */}
+            <th>Delivery Partner ID</th> 
             <th>Name</th>
             <th>Phone Number</th>
             <th>Vehicle Number</th>
@@ -51,7 +51,7 @@ console.log(partners);
             partners.map((partner, index) => (
               <tr key={index}>
                 <td>{index + 1}</td>
-                <td>{partner.Delivery_partnerID}</td> {/* Display Delivery Partner ID */}
+                <td>{partner.Delivery_partnerID}</td> 
                 <td>{partner.Name}</td>
                 <td>{partner.PhoneNumber}</td>
                 <td>{partner.VehicleID}</td>

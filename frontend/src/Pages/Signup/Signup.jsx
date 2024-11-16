@@ -12,23 +12,21 @@ const Signup = () => {
     address: '',
   });
 
-  const [error, setError] = useState(''); // State to store validation errors
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const [error, setError] = useState(''); 
+  const navigate = useNavigate(); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Update the form data
     setFormData({ ...formData, [name]: value });
 
-    // Validate password if the input is for the password field
     if (name === 'password') {
       if (value.length < 6) {
         setError('Password must be at least 6 characters long.');
       } else if (!/\d/.test(value)) {
         setError('Password must contain at least one number.');
       } else {
-        setError(''); // Clear error if validation passes
+        setError(''); 
       }
     }
   };

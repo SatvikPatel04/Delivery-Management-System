@@ -7,11 +7,10 @@ function ViewOrders({ userId }) {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    // Fetch orders for the specified user ID from the backend API
     fetch('http://localhost:5001/view-orders')
       .then((response) => response.json())
       .then((data) => {
-        console.log("Fetched Orders Data:", data); // Log data to verify response
+        console.log("Fetched Orders Data:", data); 
         setOrders(data);
       })
       .catch((error) => console.error('Error fetching orders:', error));
@@ -44,8 +43,7 @@ function ViewOrders({ userId }) {
                 <td>{order.Amount}</td>
                 <td className={`status ${order.OrderStatus.toLowerCase().replace(/\s/g, '-')}`}>
                     {order.OrderStatus}
-</td>
-
+                </td>
                 <td>{order.OrderTime}</td>
               </tr>
             ))

@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-const mysql = require('mysql2/promise'); // Use mysql2/promise for async/await support
+const mysql = require('mysql2/promise'); 
 const cors = require('cors');
 
 const app = express();
@@ -21,14 +21,13 @@ async function connectToDatabase() {
     console.log('Connected to MySQL database'); // Confirmation message
   } catch (err) {
     console.error('Error connecting to the database:', err);
-    process.exit(1); // Exit the application if connection fails
+    process.exit(1); 
   }
 }
-
-// Call the connect function
 connectToDatabase();
 
-let globalUID = 0;
+let globalUID = 0; 
+
 
 // Endpoint to Place Order
 app.post('/place-order', async (req, res) => {
@@ -61,6 +60,7 @@ app.post('/place-order', async (req, res) => {
   }
 });
 
+
 // API endpoint to remove a delivery partner
 app.delete('/remove-dp', async (req, res) => {
   const { partnerID } = req.body;
@@ -79,6 +79,7 @@ app.delete('/remove-dp', async (req, res) => {
     res.status(500).json({ message: 'Failed to remove delivery partner.', error });
   }
 });
+
 
 // Endpoint to Register User
 app.post('/register-user', async (req, res) => {
@@ -100,7 +101,8 @@ app.post('/register-user', async (req, res) => {
   }
 });
 
-// Endpoint to Authenticate User
+
+// Endpoint to Login
 app.post('/authenticate-user', async (req, res) => {
   try {
     const { email, password, role } = req.body;
@@ -127,10 +129,9 @@ app.post('/authenticate-user', async (req, res) => {
   } catch (error) {
     // Log error and return a generic server error message
     console.error('Server error:', error);
-    res.status(500).json({ message: 'Invalid email or password' });
+    res.status(500).json({ message: 'Server Error' });
   }
 });
-
 
 
 // Endpoint to Track Order
@@ -155,6 +156,7 @@ app.get('/order-status', async (req, res) => {
   }
 });
 
+
 // Endpoint to View Delivery Partners
 app.get('/delivery-partners', async (req, res) => {
   try {
@@ -165,6 +167,7 @@ app.get('/delivery-partners', async (req, res) => {
     res.status(500).json({ message: 'Failed to retrieve delivery partner details', error: error.message });
   }
 });
+
 
 // Endpoint to Add Delivery Partner
 app.post('/add-delivery-partner', async (req, res) => {
@@ -188,6 +191,7 @@ app.post('/add-delivery-partner', async (req, res) => {
   }
 });
 
+
 // Endpoint to get orders for a specific user ID
 app.get('/view-orders', async (req, res) => {
   try {
@@ -198,12 +202,12 @@ app.get('/view-orders', async (req, res) => {
   }
 });
 
+
 // Endpoint to log out
 app.post('/logout', (req, res) => {
-  globalUID = 1;
+  globalUID = 0;
   res.status(200).send({ message: 'Logged out successfully' });
 });
-
 
 
 // Endpoint to Update User Details
@@ -241,10 +245,7 @@ app.post('/update-user-details', async (req, res) => {
 });
 
 
-
-
-
-// Start server
+// Start server at port 5001
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
