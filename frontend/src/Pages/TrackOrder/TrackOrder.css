@@ -1,0 +1,110 @@
+.track-order-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s;
+}
+
+.track-order-container:hover {
+  background-color: #ffffff;
+}
+
+h2, h3 {
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}
+
+.order-info, .order-status {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.order-info p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.order-input {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.order-input input {
+  padding: 8px;
+  width: 200px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.order-input button {
+  padding: 8px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.order-input button:hover {
+  background-color: #45a049;
+}
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.status-step {
+  padding: 10px;
+  flex: 1;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #e0e0e0;
+  color: #555;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.status-step.active {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+.status-bar .status-step:not(:last-child) {
+  margin-right: 5px;
+}
+
+.status-step:hover {
+  background-color: #8bc34a;
+  color: white;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.status {
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #333;
+  font-size: 18px;
+}

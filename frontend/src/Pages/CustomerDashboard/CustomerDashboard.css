@@ -1,0 +1,47 @@
+.cust-dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .dashboard-options {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    justify-content: center;
+  }
+  
+  .dashboard-button {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none; /* Remove border for button */
+    cursor: pointer; /* Change cursor for button */
+  }
+  
+  .dashboard-button:hover {
+    color: white;
+    background-color: #45a049;
+  }
+  
+  .cancel-order-button {
+    background-color: #dc3545; /* Red color for cancel button */
+  }
+  
+  .cancel-order-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+  }
+  

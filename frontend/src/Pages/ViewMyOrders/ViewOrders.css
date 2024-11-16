@@ -1,0 +1,65 @@
+/* ViewOrders.css */
+.view-orders-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .view-orders-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .orders-table th,
+  .orders-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #000000bb;
+  }
+  
+  .orders-table th {
+    background-color: #000000;
+    font-weight: bold;
+  }
+  
+  .orders-table tbody tr:nth-child(even) {
+    background-color: #000000bb;
+  }
+  
+  .orders-table tbody tr:nth-child(odd) {
+    background-color: #000000cf;
+  }
+  
+  .orders-table tbody tr:hover {
+    background-color: #4e4e4ebb;
+  }
+  
+  .status {
+    font-weight: bold;
+  }
+  
+  .status.pending {
+    color: #ffc107; /* Yellow for Pending */
+  }
+  
+  .status.in-transit {
+    color: #17a2b8; /* Blue for In Transit */
+  }
+  
+  .status.delivered {
+    color: #28a745; /* Green for Delivered */
+  }
+  
+  .status.cancelled {
+    color: #dc3545; /* Red for Cancelled */
+  }
+  
