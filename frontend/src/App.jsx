@@ -12,6 +12,7 @@ import CustomerDashboard from './Pages/CustomerDashboard/CustomerDashboard';
 import ViewOrders from './Pages/ViewMyOrders/ViewOrders.jsx';
 import RemoveDP from './Pages/RemoveDP/RemoveDP.jsx';
 import UpdateDetails from './Pages/UpdateDetails/UpdateDetails.jsx';
+import ViewAllOrders from './Pages/ViewAllOrders/ViewAllOrders.jsx';
 
 function App() {
   
@@ -29,6 +30,7 @@ function App() {
         <Route path='/view-my-orders' element={<ViewOrders />} />
         <Route path='/remove-dp' element={<RemoveDP />} />
         <Route path='/update-user' element={<UpdateDetails />} />
+        <Route path='/view-all-orders' element={<ViewAllOrders />} />
       </Routes>
     </BrowserRouter>
   );

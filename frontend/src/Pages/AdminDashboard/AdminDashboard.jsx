@@ -15,6 +15,9 @@ function AdminDashboard() {
         <Link to="/view-delivery-partners" className="dashboard-button">
           View Delivery Partners
         </Link>
+        <Link to="/view-all-orders" className="dashboard-button">
+          View All Orders
+        </Link>
         <Link to="/remove-dp" className="dashboard-button">
           Remove Delivery Partner
         </Link>

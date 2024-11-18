@@ -169,6 +169,18 @@ app.get('/delivery-partners', async (req, res) => {
 });
 
 
+// Endpoint to View All Orders
+app.get('/all-orders', async (req, res) => {
+  try {
+    const [results] = await db.query('CALL GetAllOrders()');
+    console.log("Fetched All Orders:", results[0]);
+    res.json(results[0]);
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to retrieve all order details', error: error.message });
+  }
+});
+
+
 // Endpoint to Add Delivery Partner
 app.post('/add-delivery-partner', async (req, res) => {
   const { name, phoneNumber, vehicleType, vehicleCapacity, maintenanceSchedule } = req.body;

@@ -1,8 +1,8 @@
--- Create the database and use it
+-- Create and use database 
 CREATE DATABASE Courier_Service;
 USE Courier_Service;
 
--- User table
+-- User table 
 CREATE TABLE User (
     UserID INT PRIMARY KEY AUTO_INCREMENT,
     Name VARCHAR(100) NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE User (
     Address TEXT
 );
 
--- Vehicle table
+-- Vehicle table 
 CREATE TABLE Vehicle (
     VehicleID INT PRIMARY KEY AUTO_INCREMENT,
     Type VARCHAR(50) NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE Vehicle (
     GPSLocation VARCHAR(100)
 );
 
--- Delivery_partner table
+-- Delivery_partner table 
 CREATE TABLE Delivery_partner (
     Delivery_partnerID INT PRIMARY KEY AUTO_INCREMENT,
     Name VARCHAR(100) NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE Delivery_partner (
     FOREIGN KEY (VehicleID) REFERENCES Vehicle(VehicleID)
 );
 
--- Orders table (renamed from Order)
+-- `Order` table 
 CREATE TABLE `Order` (
     OrderID INT PRIMARY KEY AUTO_INCREMENT,
     PickUpLocation VARCHAR(255) NOT NULL,
