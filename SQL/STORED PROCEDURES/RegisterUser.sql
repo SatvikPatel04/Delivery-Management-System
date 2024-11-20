@@ -1,6 +1,6 @@
 USE Courier_service;
 
-DROP PROCEDURE IF EXISTS GetUserOrders;
+DROP PROCEDURE IF EXISTS RegisterUser;
 
 DELIMITER //
 

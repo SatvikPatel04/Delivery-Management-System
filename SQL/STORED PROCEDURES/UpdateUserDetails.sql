@@ -1,6 +1,6 @@
 USE Courier_service;
 
-DROP PROCEDURE IF EXISTS GetUserOrders;
+DROP PROCEDURE IF EXISTS UpdateUserDetails;
 
 DELIMITER //
 
@@ -29,6 +29,30 @@ BEGIN
         -- Handle case where user does not exist (optional)
         SIGNAL SQLSTATE '45000'
             SET MESSAGE_TEXT = 'UserID not found.';
+    END IF;
+END //
+
+DELIMITER ;
+
+
+
+
+-- Trigger that updates delivery partner status with order status
+DROP TRIGGER IF EXISTS trg_update_Delivery_partner_status;
+DELIMITER //
+
+CREATE TRIGGER trg_update_Delivery_partner_status
+AFTER UPDATE ON `order`
+FOR EACH ROW
+BEGIN
+    IF NEW.OrderStatus = 'In Transit' THEN
+        UPDATE Delivery_partner 
+        SET Status = 'Unavailable' 
+        WHERE Delivery_partnerID = NEW.Delivery_partnerID;
+    ELSEIF NEW.OrderStatus = 'Delivered' THEN
+        UPDATE Delivery_partner 
+        SET Status = 'Available' 
+        WHERE Delivery_partnerID = NEW.Delivery_partnerID;
     END IF;
 END //
 
